@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqkamfbcm64ql"]
+
+[ext_resource type="PackedScene" uid="uid://ckn8ye3i5wdif" path="res://Scenes/Bg.tscn" id="1_dixgd"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_lvsei"]
+[ext_resource type="PackedScene" uid="uid://dp36xqtyp0wpw" path="res://Scenes/ground.tscn" id="2_5g0vt"]
+[ext_resource type="PackedScene" uid="uid://dibadbtwrrx6k" path="res://Scenes/dino.tscn" id="3_q0w8j"]
+[ext_resource type="PackedScene" uid="uid://bjwa4tioepb33" path="res://Scenes/hud.tscn" id="5_laxqn"]
+[ext_resource type="PackedScene" uid="uid://c5pnlkxaac7vd" path="res://Scenes/game_over.tscn" id="6_woy8u"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_lvsei")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_dixgd")]
+
+[node name="Ground" parent="." instance=ExtResource("2_5g0vt")]
+
+[node name="Dino" parent="." instance=ExtResource("3_q0w8j")]
+position = Vector2(105, 479)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="HUD" parent="." instance=ExtResource("5_laxqn")]
+
+[node name="GameOver" parent="." instance=ExtResource("6_woy8u")]
+process_mode = 2
